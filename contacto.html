@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="sources/icon_Gato.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - La Casa de Los Michis</title>
+    <link rel="stylesheet" href="grid3.css">
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1 id="titulo">La comunidad de los michis</h1>
+    </header>
+    <nav class="MENU">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Historias.html">Historia</a></li>
+            <li><a href="galeria.html">Imágenes de Gatos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+   
+    <aside class="Barra3">
+        <h2>📞 Contacto</h2>
+        <p>Utiliza el siguiente formulario para registrar gatos o para cualquier consulta.</p>
+    </aside>
+    
+    <section class="Seccion1">
+        <div class="form-container">
+            <h2>Registro de Gatos</h2>
+            <form id="registro-gato">
+                <input type="text" id="nombre" placeholder="Nombre del Gato" required>
+                <input type="text" id="raza" placeholder="Raza" required>
+                <input type="text" id="edad" placeholder="Edad" required>
+                <textarea id="descripcion" placeholder="Descripción" rows="4" required></textarea>
+                <button type="submit">Registrar Gato</button>
+            </form>
+        </div>
+
+        <div class="social-container">
+            <div class="social-circle" onclick="window.open('https://www.facebook.com/Tesla9750/');">
+                <img src="sources/facebook-icon.png" alt="Facebook" class="social-icon">
+            </div>
+            <div class="social-circle" onclick="window.open('https://x.com/http_tesla');">
+                <img src="sources/twitter-icon.png" alt="Twitter" class="social-icon">
+            </div>
+            <div class="social-circle" onclick="window.open('https://www.instagram.com/http_tesla_/', '_blank');">
+                <img src="sources/instagram-icon.png" alt="Instagram" class="social-icon">
+            </div>
+        </div>
+    </section>
+    
+    <footer class="PiePagina">
+        Diseñado por: <a href="https://www.Youtube.com/PZ222">La comunidad de los michis</a>
+    </footer>
+
+    <script>
+        // Evento para mostrar alerta al hacer clic en el título
+        document.getElementById("titulo").addEventListener("click", function() {
+            alert("¡Bienvenido a la comunidad de los michis!");
+        });
+
+        // Evento para alertar cuando el usuario intenta salir al hacer clic en el enlace del pie de página
+        document.querySelector(".PiePagina a").addEventListener("click", function(event) {
+            const salir = confirm("¿Estás seguro de que quieres salir de la comunidad de los michis?");
+            if (!salir) {
+                event.preventDefault(); // Cancela la navegación si el usuario elige "Cancelar"
+            }
+        });
+
+        // Manejo del formulario de registro
+        document.getElementById('registro-gato').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Obtener los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const raza = document.getElementById('raza').value;
+            const edad = document.getElementById('edad').value;
+            const descripcion = document.getElementById('descripcion').value;
+
+            // Enviar datos a MockAPI
+            fetch('https://67e1ca3d58cc6bf78527175f.mockapi.io/gatos', { // Reemplaza con tu URL de MockAPI
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombre: nombre,
+                    raza: raza,
+                    edad: edad,
+                    descripcion: descripcion
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("¡Gato registrado con éxito!"); // Mensaje de éxito
+                this.reset(); // Reinicia el formulario
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert("Hubo un error al registrar el gato."); // Mensaje de error
+            });
+        });
+    </script>
+</body>
+</html>

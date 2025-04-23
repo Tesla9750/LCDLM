@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="sources/icon_Gato.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes de Gatos</title>
+    <link rel="stylesheet" href="grid3.css"> <!-- Asegúrate de que el CSS esté vinculado -->
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1000; /* Por encima de otros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Ancho completo */
+            height: 100%; /* Alto completo */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+
+        .modal img {
+            max-width: 90%; /* Ancho máximo de la imagen */
+            max-height: 90%; /* Alto máximo de la imagen */
+            border-radius: 10px; /* Bordes redondeados para la imagen */
+        }
+
+        .close {
+            position: absolute; /* Posición absoluta para el botón de cerrar */
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+    </style>
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1 id="titulo">Galería de Gatos</h1>
+    </header>
+    <nav class="MENU">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Historias.html">Historia</a></li>
+            <li><a href="galeria.html">Imágenes de Gatos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+   
+    <aside class="Barra3">
+        <h2>📸 Imágenes de Gatos</h2>
+        <p>Disfruta de nuestra colección de adorables imágenes de gatos.</p>
+    </aside>
+    
+    <section class="Seccion1">
+        <div class="galeria">
+            <div class="item item-large">
+                <img src="sources/art4.jpg" alt="Gato 1" class="imagen" data-sonido="sources/wiwiwi-motivacional-cat.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/michi2.jpg" alt="Gato 2" class="imagen" data-sonido="sources/gato2.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/michi3.jpg" alt="Gato 3" class="imagen" data-sonido="sources/gato3.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/art3.jpg" alt="Gato 4" class="imagen" data-sonido="sources/gato4.mp3">
+            </div>
+            <div class="item item-large">
+                <img src="sources/shadow.jpg" alt="Gato 5" class="imagen" data-sonido="sources/gato5.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/Compania.jpg" alt="Gato 6" class="imagen" data-sonido="sources/gato6.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/mountains.jpg" alt="Gato 7" class="imagen" data-sonido="sources/gato7.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/art1.jpg" alt="Gato 8" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/art2.jpg" alt="Gato 9" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/dante_9_years.jpg" alt="Gato 10" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/dante_adopted.jpg" alt="Gato 11" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/dante_forest.jpg" alt="Gato 12" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/dante_leaves.jpg" alt="Gato 13" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/echo_hiding.jpg" alt="Gato 14" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/echo_injured.jpg" alt="Gato 15" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/echo_survivor.jpg" alt="Gato 16" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/EMILY.jpeg" alt="Gato 17" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/exodus_terminal.jpg" alt="Gato 18" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/nexus9_city.jpg" alt="Gato 19" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <div class="item">
+                <img src="sources/zenith_tower.jpg" alt="Gato 20" class="imagen" data-sonido="sources/gato8.mp3">
+            </div>
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </section>
+    
+    <footer class="PiePagina">
+        Diseñado por: <a href="https://www.Youtube.com/PZ222">La comunidad de los michis</a>
+    </footer>
+
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div class="modal" id="modal">
+        <span class="close" id="close">&times;</span>
+        <img id="modal-img" src="" alt="Imagen Ampliada">
+    </div>
+
+    <script>
+        // Evento para mostrar alerta al hacer clic en el título
+        document.getElementById("titulo").addEventListener("click", function() {
+            alert("¡Bienvenido a la comunidad de los michis!");
+        });
+
+        // Evento para alertar cuando el usuario intenta salir al hacer clic en el enlace del pie de página
+        document.querySelector(".PiePagina a").addEventListener("click", function(event) {
+            const salir = confirm("¿Estás seguro de que quieres salir de la comunidad de los michis?");
+            if (!salir) {
+                event.preventDefault(); // Cancela la navegación si el usuario elige "Cancelar"
+            }
+        });
+
+        // Reproducir sonido específico al hacer clic en cualquier imagen de la galería
+        const imagenes = document.querySelectorAll('.galeria .imagen');
+
+        imagenes.forEach(imagen => {
+            imagen.addEventListener('click', function() {
+                const sonidoSrc = this.getAttribute('data-sonido'); // Obtiene la ruta del sonido desde el atributo data
+                const sonido = new Audio(sonidoSrc); // Crea un nuevo objeto Audio con la ruta del sonido
+                sonido.play(); // Reproduce el sonido
+
+                // Mostrar la imagen ampliada en el modal
+                const modal = document.getElementById('modal');
+                const modalImg = document.getElementById('modal-img');
+                modalImg.src = this.src; // Establece la fuente de la imagen del modal
+                modal.style.display = 'flex'; // Muestra el modal
+            });
+        });
+
+        // Cerrar el modal al hacer clic en la "X"
+        document.getElementById('close').addEventListener('click', function() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // Oculta el modal
+        });
+
+        // Cerrar el modal al hacer clic fuera de la imagen
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none'; // Oculta el modal
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="sources/icon_Gato.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Casa de Los Michis</title>
+    <link rel="stylesheet" href="grid3.css">
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1 id="titulo">La comunidad de los michis</h1>
+    </header>
+    <nav class="MENU">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Historias.html">Historia</a></li>
+            <li><a href="galeria.html">Imágenes de Gatos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+   
+    <aside class="Barra3">
+        <h2>📖 Historias de Gatos</h2>
+        <p>Bienvenidos a la sección de historias de gatos. Aquí encontrarás relatos increíbles de nuestros amigos felinos.</p>
+        
+        <div class="historias-container">
+            <div class="historia-card" style="background-image: url('sources/shadow.jpg');">
+                <h3>🐾 Shadow: "The Midnight Crew"</h3>
+                <p>En el tranquilo pueblo de Willowbrook, Shadow no era un gato negro común...</p>
+                <a href="shadow.html" class="leer-mas" target="_blank">Leer más</a>
+            </div>
+            <div class="historia-card" style="background-image: url('sources/Compania.jpg');" data-historia="Descripción breve de otra historia de gato...">
+                <h3>🐾 La Comunidad de los Michis: La Búsqueda del Collar Perdido</h3>
+                <p>En un mundo donde los humanos y los gatos coexistían, pero rara vez se entendían, existía un reino mágico llamado Felinoria....</p>
+                <a href="felinoria.html" class="leer-mas">Leer más</a>
+            </div>
+            <div class="historia-card" style="background-image: url('sources/dante_9_years.jpg');" data-historia="Descripción breve de la tercera historia de gato...">
+                <h3>🐾 El Secreto de Dante</h3>
+                <p>En un pequeño pueblo rodeado de colinas y bosques frondosos, vivía un gato negro llamado Dante...</p>
+                <a href="dante.html" class="leer-mas">Leer más</a>
+            </div>
+            <div class="historia-card" style="background-image: url('sources/nexus9_city.jpg');" data-historia="Descripción breve de la cuarta historia de gato...">
+                <h3>🐾 Nexus-9: El Último Refugio Felino</h3>
+                <p>El crepúsculo artificial teñía el cielo de un púrpura metálico sobre Nexus-9...</p>
+                <a href="nexus9.html" class="leer-mas">Leer más</a>
+            </div>
+        </div>
+    </aside>
+    
+    <footer class="PiePagina">
+        Diseñado por: <a href="https://www.Youtube.com/PZ222">La comunidad de los michis</a>
+    </footer>
+
+    <script>
+        // Evento para mostrar alerta al hacer clic en el título
+        document.getElementById("titulo").addEventListener("click", function() {
+            alert("¡Bienvenido a la comunidad de los michis!");
+        });
+
+        // Evento para alertar cuando el usuario intenta salir al hacer clic en el enlace del pie de página
+        document.querySelector(".PiePagina a").addEventListener("click", function(event) {
+            const salir = confirm("¿Estás seguro de que quieres salir de la comunidad de los michis?");
+            if (!salir) {
+                event.preventDefault(); // Cancela la navegación si el usuario elige "Cancelar"
+            }
+        });
+    </script>
+</body>
+</html>

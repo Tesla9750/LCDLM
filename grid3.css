@@ -1,0 +1,325 @@
+/* ==============================
+   ESTILOS GENERALES
+   ============================== */
+
+   html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    font-family: 'Arial', sans-serif; /* Cambiado a una fuente más moderna */
+    background-color: #f0f0f0; /* Color de fondo más suave */
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL (GRID)
+   ============================== */
+
+.grid-container {
+    display: grid;
+    gap: 10px; 
+    padding: 10px;
+    grid-template:
+        "header" 200px 
+        "navbar" 100px
+        "section" auto
+        "sidebar" auto
+        "footer" 100px;
+}
+
+/* ==============================
+   ESTILOS DE ELEMENTOS INDIVIDUALES
+   ============================== */
+
+.imagen {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header {
+    grid-area: header;
+    background: url(sources/cats2.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Times New Roman';
+    border-radius: 10px;
+
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.MENU {
+    grid-area: navbar;
+    background: #050912; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: 'Times New Roman';
+
+
+}
+
+/* BARRA LATERAL */
+.Barra3 {
+    grid-area: sidebar;
+    background-color: #020913;
+    color: whitesmoke;
+    padding: 20px; /* Aumentado para mejor presentación */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* SECCIÓN PRINCIPAL */
+.Seccion1 {
+    grid-area: section;
+    background-color: #020913;
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    border-radius: 10px;
+
+}
+
+/* PIE DE PÁGINA */
+.PiePagina {
+    grid-area: footer;
+    background-color: #00030A;
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman';
+    border-radius: 10px;
+
+
+}
+
+/* ==============================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ============================== */
+
+@media (min-width: 600px) {
+    .header {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    .header {
+        font-size: 40px;
+    }
+}
+
+/* ==============================
+   ESTILOS DEL MENÚ DE NAVEGACIÓN
+   ============================== */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+
+.historias-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.historia-card {
+    background-size: cover; /* Asegura que la imagen cubra toda la tarjeta */
+    background-position: center; /* Centra la imagen de fondo */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px; /* Ancho de cada tarjeta */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    position: relative; /* Para posicionar el texto */
+}
+
+.historia-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+}
+
+.historia-card p {
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+}
+
+.leer-mas {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgba(0, 123, 255, 0.8); /* Color de fondo con opacidad */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.leer-mas:hover {
+    background-color: rgba(0, 123, 255, 1); /* Color al pasar el mouse */
+}
+
+        /* Estilos específicos para la galería */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cuadrícula responsiva */
+            gap: 10px; /* Espacio entre las imágenes */
+            padding: 10px;
+        }
+
+        .item {
+            position: relative; /* Para posicionar elementos dentro */
+            overflow: hidden; /* Para recortar imágenes que sobresalen */
+            border-radius: 10px; /* Bordes redondeados para las imágenes */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para las imágenes */
+            transition: transform 0.3s; /* Transición suave para el efecto hover */
+        }
+
+        .item img {
+            width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block; /* Elimina el espacio debajo de las imágenes */
+        }
+
+        .item:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+        .historia-img {
+            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Bordes redondeados para las imágenes */
+            margin: 10px 0; /* Espaciado vertical entre imágenes */
+        }
+        /* Estilos para el formulario */
+        .form-container {
+            background-color: #020913; /* Fondo del formulario */
+            color: whitesmoke; /* Color del texto */
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 20px; /* Margen alrededor del formulario */
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            margin: 10px 0; /* Margen vertical */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        .form-container button {
+            background-color: #FDD835; /* Color del botón */
+            color: black; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+
+        .form-container button:hover {
+            background-color: #FF7043; /* Color al pasar el mouse */
+        }
+
+        /* Estilos para los círculos de redes sociales */
+        .social-container {
+            display: flex;
+            justify-content: center; /* Centra los círculos */
+            margin: 20px 0; /* Margen vertical */
+        }
+
+        .social-circle {
+            width: 50px; /* Ancho del círculo */
+            height: 50px; /* Alto del círculo */
+            border-radius: 50%; /* Hace que sea un círculo */
+            background-color: #FDD835; /* Color de fondo */
+            display: flex;
+            justify-content: center; /* Centra el contenido */
+            align-items: center; /* Centra el contenido */
+            margin: 0 10px; /* Espaciado entre círculos */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+
+        .social-circle:hover {
+            background-color: #FF7043; /* Color al pasar el mouse */
+        }
+
+        .social-icon {
+            width: 24px; /* Ancho del icono */
+            height: 24px; /* Alto del icono */
+        }
+        
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Fijo en la pantalla */
+            z-index: 1000; /* Por encima de otros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Ancho completo */
+            height: 100%; /* Alto completo */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+
+        .modal-content {
+            background-color: white; /* Fondo blanco para el contenido del modal */
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados para el contenido */
+            max-width: 600px; /* Ancho máximo del modal */
+            text-align: left; /* Alineación del texto */
+        }
+
+        .close {
+            position: absolute; /* Posición absoluta para el botón de cerrar */
+            top: 20px;
+            right: 30px;
+            color: black;
+            font-size: 30px;
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+
+        /* Ajustes para las imágenes de la historia */
+        .historia-img {
+            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 10px; /* Bordes redondeados para las imágenes */
+            margin: 10px 0; /* Espaciado vertical entre imágenes */
+        }
+    
